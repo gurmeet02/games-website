@@ -23,6 +23,8 @@ export default function SearchPage() {
       );
   }, [search]);
 
+  document.title = `GameZone | Search`
+
   return (
     <section className="bg-dark w-full max-lg:py-8">
       {games.loaded ? (

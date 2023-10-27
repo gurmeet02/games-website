@@ -4,7 +4,7 @@ import ArrowIcon from "../assets/arrow_icon.svg";
 
 export default function TopRatedPage() {
   const [page, setPage] = useState(1);
-  document.title = `GameZone | Trending | ${page}`;
+
 
   const nextPage = () => {
     setPage(page + 1);
@@ -18,8 +18,14 @@ export default function TopRatedPage() {
 
   const date = new Date();
   const month = date.getMonth() + 1;
+  
+  const currentMonth =
+  month.toString().length === 1 ? '0' + month : month
+  const dd = date.getDate() + 1;
+  const currentDD =
+  dd.toString().length === 1 ? '0' + dd : dd
   const currentDate =
-    date.getFullYear() + "-" + "0" + month + "-" + date.getDate();
+    date.getFullYear() + "-" + currentMonth + "-" + currentDD;
 
   const currentYear = date.getFullYear();
 
@@ -41,6 +47,7 @@ export default function TopRatedPage() {
       );
   }, [page]);
   console.log(yearGames);
+  document.title = `GameZone | ${currentYear} Games | ${page}`;
 
   return (
     <section className="bg-dark w-full p-8 max-sm:py-16">

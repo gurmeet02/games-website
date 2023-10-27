@@ -68,6 +68,8 @@ export default function GamePage() {
   const developers = game.gameData.developers;
   const platforms = game.gameData.platforms;
 
+  document.title = `GameZone | Game | ${name}`
+
   return (
     <section className="bg-dark w-full max-md:py-4">
       {game.loaded ? (

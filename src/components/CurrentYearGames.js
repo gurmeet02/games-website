@@ -10,15 +10,16 @@ export default function TrendingGames() {
   const date = new Date();
   const year = date.getFullYear();
   const month = date.getMonth() + 1;
+  const currentMonth =
+  month.toString().length === 1 ? '0' + month : month
+  const dd = date.getDate() + 1;
+  const currentDD =
+  dd.toString().length === 1 ? '0' + dd : dd
+
   const currentDate =
-    date.getFullYear() + "-" + "0" + month + "-" + date.getDate();
+    date.getFullYear() + "-" + currentMonth + "-" + currentDD
 
-  const oldDD = date.getDate() - 21;
 
-  const oldDate =
-    oldDD.toString().length === 1
-      ? date.getFullYear() + "-" + "0" + month + "-" + "0" + oldDD
-      : date.getFullYear() + "-" + "0" + month + "-" + oldDD;
 
   const [trendingGames, setTrendingGames] = useState({
     games: [],
